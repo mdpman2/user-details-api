@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: "akstestys-5aa8"
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: "akstestys-5aa8"
+  template:
+    metadata:
+      labels:
+        app: "akstestys-5aa8"
+    spec:
+      containers:
+        - name: "akstestys-5aa8"
+          image: "testys.azurecr.io/akstestys"
+          ports:
+          - containerPort: 80

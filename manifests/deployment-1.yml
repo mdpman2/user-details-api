@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: "testysaks-d107"
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: "testysaks-d107"
+  template:
+    metadata:
+      labels:
+        app: "testysaks-d107"
+    spec:
+      containers:
+        - name: "testysaks-d107"
+          image: "testys.azurecr.io/testysaks"
+          ports:
+          - containerPort: 80

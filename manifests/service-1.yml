@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+    name: "testysaks-d107"
+    labels:
+        app: "testysaks-d107"
+spec:
+    type: LoadBalancer
+    ports:
+    - port: 80
+      targetPort: 80
+      protocol: TCP
+      name: http
+    selector:
+        app: "testysaks-d107"
